@@ -1,0 +1,34 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: mtrmap-mysql
+    environment:
+      MYSQL_DATABASE: mtrmap
+      MYSQL_USER: mtrmap
+      MYSQL_PASSWORD: mtrmap
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Tokyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - mtrmap_mysql:/var/lib/mysql
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+
+  api:
+    build: .
+    container_name: mtrmap-api
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/mtrmap?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tokyo&characterEncoding=utf8
+      SPRING_DATASOURCE_USERNAME: mtrmap
+      SPRING_DATASOURCE_PASSWORD: mtrmap
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+volumes:
+  mtrmap_mysql:
+#  --- IGNORE ---
