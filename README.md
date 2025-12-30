@@ -1,3 +1,8 @@
+# docker コマンド
+
+echo 'export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
 # mtr-backend
 
 mtr-backend/
