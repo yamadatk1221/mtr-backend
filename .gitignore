@@ -1,0 +1,23 @@
+# ===== Java / Gradle =====
+.gradle/
+build/
+out/
+target/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.iml
+
+# ===== OS =====
+.DS_Store
+
+# ===== Logs =====
+*.log
+
+# ===== Env =====
+.env
+.env.*
+
+# ===== Docker =====
+docker-data/

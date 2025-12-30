@@ -3,6 +3,10 @@
 echo 'export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 
+# ソース修正時
+
+docker compose up -d --build api
+
 # mtr-backend
 
 mtr-backend/
