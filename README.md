@@ -7,6 +7,12 @@ source ~/.zshrc
 
 docker compose up -d --build api
 
+# MySQL 接続
+
+echo 'export PATH="/usr/local/opt/mysql-client/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+mysql -h 127.0.0.1 -P 3306 -u root -p --default-character-set=utf8mb4
+
 # mtr-backend
 
 mtr-backend/
