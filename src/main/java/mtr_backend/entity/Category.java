@@ -12,4 +12,16 @@ public class Category extends BaseEntity {
 
     @Column(name = "NAME", nullable = false, length = 50)
     private String name;
+
+    public static Category create(String name) {
+        Category category = new Category();
+        category.name = name;
+        return category;
+    }
+
+    public void update(String name) {
+        this.name = name;
+    }
 }
+
+

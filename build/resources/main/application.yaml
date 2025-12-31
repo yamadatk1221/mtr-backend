@@ -9,6 +9,11 @@ spring:
     url: jdbc:mysql://localhost:3306/mtrmap
     username: mtrmap
     password: mtrmap
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 logging:
   level:
