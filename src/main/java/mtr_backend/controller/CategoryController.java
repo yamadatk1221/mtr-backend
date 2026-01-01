@@ -3,8 +3,6 @@ package mtr_backend.controller;
 import mtr_backend.service.CategoryService;
 import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import mtr_backend.response.CategoryResponse;
 import mtr_backend.response.SimpleResponse;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 @RequiredArgsConstructor
-@Validated
 public class CategoryController {
 
     private final CategoryService categoryService;
